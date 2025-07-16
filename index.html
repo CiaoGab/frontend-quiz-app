@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | Frontend quiz app</title>
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <div class="subject-list">
+          <div class="subject-background" id="header-icon">
+            <img
+              src="./assets/images/icon-accessibility.svg"
+              alt="Accessibility"
+              id="icon-image"
+            />
+          </div>
+          <p id="header-subject-name">Accessibility</p>
+        </div>
+
+        <div class="toggle-container">
+          <img
+            src="./assets/images/icon-sun-dark.svg"
+            alt="Sun icon"
+            class="icon-sun"
+          />
+          <label class="toggle-switch">
+            <input type="checkbox" id="darkmode-toggle" />
+            <span class="slider"></span>
+          </label>
+          <img
+            src="./assets/images/icon-moon-dark.svg"
+            alt="Moon icon"
+            class="icon-moon"
+          />
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="main-container">
+        <div class="title-container">
+          <p id="question-tracker">Question 1 of 10</p>
+          <h1 id="question-box">Welcome to the <span>Frontend Quiz!</span></h1>
+          <p>Pick a subject to get started.</p>
+        </div>
+
+        <div class="subject-container">
+          <ul id="options-list">
+            <li class="subject-item">
+              <div class="subject-background" id="Html">
+                <img
+                  src="./assets/images/icon-html.svg"
+                  alt="HTML"
+                  id="main-icon1"
+                />
+              </div>
+              <p>HTML</p>
+            </li>
+
+            <li class="subject-item">
+              <div class="subject-background" id="CSS">
+                <img
+                  src="./assets/images/icon-css.svg"
+                  alt="CSS"
+                  id="main-icon2"
+                />
+              </div>
+              <p>CSS</p>
+            </li>
+
+            <li class="subject-item">
+              <div class="subject-background" id="Javascript">
+                <img
+                  src="./assets/images/icon-js.svg"
+                  alt="JavaScript"
+                  id="main-icon3"
+                />
+              </div>
+              <p>JavaScript</p>
+            </li>
+
+            <li class="subject-item">
+              <div
+                class="subject-background"
+                id="Accessibility"
+                id="main-icon4"
+              >
+                <img
+                  src="./assets/images/icon-accessibility.svg"
+                  alt="Accessibility"
+                />
+              </div>
+              <p>Accessibility</p>
+            </li>
+            
+          </ul>
+          <button id="submit-answer-btn"></button>
+          <div class="error-container"></div>
+          <div class="results-container">
+            <h2 id="completed-text">Quiz completed <span id="score-span">You scored...</span></h2>
+            <div class="score-container">
+              <div class="subject-list">
+                <div class="subject-background" id="header-icon">
+                  <img
+                    src="./assets/images/icon-accessibility.svg"
+                    alt="Accessibility"
+                    id="icon-image"
+                  />
+                </div>
+                <p id="header-subject-name">Accessibility</p>
+              </div>
+              <h2 id="score-amount">8</h2>
+              <p>out of 10</p>
+              
+            </div>
+            <button class="play-again-btn">Play again</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

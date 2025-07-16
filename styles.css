@@ -1,0 +1,348 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'rubik', sans-serif;
+    background: #F4F6FA;
+    background-image: url(./assets/images/pattern-background-mobile-light.svg);
+    background-position: cover;
+    background-repeat: no-repeat;
+}
+h1 {
+    font-weight: 400;
+}
+.title-container span {
+    font-weight: 500;
+}
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 24px;
+}
+.subject-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    visibility: hidden;
+}
+.subject-background {
+    height: 40px;
+    width: 40px;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.subject-background img {
+    height: 28.57px;
+    width: 28.57px;
+}
+#Accessibility{
+    background: #F6E7FF;
+}
+#Html {
+    background: #FFF5ED;
+}
+#CSS {
+    background: #E0FDEF;
+}
+#Javascript {
+    background: #EBF0FF;
+}
+.toggle-container {
+    height: auto;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+.toggle-container img {
+    height: 16px;
+}
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 24px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 24px;
+  transition: background-color 0.3s;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+.toggle-switch input:checked + .slider::before {
+  transform: translateX(24px);
+}
+.main-container {
+    display: flex;
+    flex-direction: column;
+    padding: 32px 24px;
+    gap: 40px;
+}
+.title-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+#question-tracker{
+    visibility: hidden;
+}
+.subject-container ul {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.subject-container li {
+    cursor: pointer;
+}
+
+.subject-container li:hover {
+    border: 0.5px solid rgb(56, 56, 109);
+   
+}
+.subject-item {
+    background: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 16px;
+    border-radius: 12px;
+    gap: 16px;
+}
+#submit-answer-btn {
+    padding: 16px;
+    height: 56px;
+    width: 100%;
+    margin-top: 16px;
+    border-radius: 12px;
+    border: none;
+    background-color: #A729F5;
+    color: white;
+    font-family: 'rubik', sans-serif;
+    font-size: 18px;
+    visibility: hidden;
+}
+
+body.dark-mode {
+  background-color: #313E51;
+  background-image: url(./assets/images/pattern-background-mobile-dark.svg);
+  color: white;
+}
+
+body.dark-mode .subject-item {
+  background-color: #3B4D66;
+  color: white;
+}
+
+body.dark-mode .slider {
+  background-color: #A729F5;
+}
+
+/* Default (light mode) */
+.icon-sun {
+  content: url('./assets/images/icon-sun-dark.svg');
+}
+
+.icon-moon {
+  content: url('./assets/images/icon-moon-dark.svg');
+}
+
+/* Dark mode overrides */
+body.dark-mode .icon-sun {
+  content: url('./assets/images/icon-sun-light.svg'); /* ← white sun icon */
+}
+
+body.dark-mode .icon-moon {
+  content: url('./assets/images/icon-moon-light.svg'); /* ← white moon icon */
+}
+
+.disabled {
+  pointer-events: none;
+}
+
+.results-container {
+  display: none;
+}
+
+.results-container.dark-mode {
+  background-color: #3B4D66 ;
+}
+
+/* --- Answer State Styling --- */
+
+/* Base style for the A, B, C, D circles */
+.option-letter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: #f4f6fa; /* Light gray background */
+  color: #626c7f; /* Dark gray text */
+  font-family: "rubik", sans-serif;
+  font-weight: 500;
+  flex-shrink: 0; /* Prevents the circle from shrinking */
+}
+
+/* Style for the answer option the user has clicked on */
+.subject-item.selected {
+  border: 3px solid #a729f5; /* Purple border to indicate selection */
+}
+
+/* Style for the letter (A,B,C,D) of a selected answer */
+.subject-item.selected .option-letter {
+  background-color: #a729f5;
+  color: white;
+}
+
+/* Style for a correct answer after submission */
+.subject-item.correct {
+  border: 3px solid #26d782; /* Green border for correct */
+}
+
+/* Style for the letter of a correct answer */
+.subject-item.correct .option-letter {
+  background-color: #26d782;
+  color: white;
+}
+
+/* Style for an incorrect answer after submission */
+.subject-item.incorrect {
+  border: 3px solid #ee5454; /* Red border for incorrect */
+}
+
+/* Style for the letter of an incorrect answer */
+.subject-item.incorrect .option-letter {
+  background-color: #ee5454;
+  color: white;
+}
+
+/* Add a checkmark icon to the correct answer */
+.subject-item.correct::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin-left: auto; /* Pushes the icon to the far right */
+  background-image: url("./assets/images/icon-correct.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Add an 'X' icon to the incorrect answer */
+.subject-item.incorrect::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin-left: auto; /* Pushes the icon to the far right */
+  background-image: url("./assets/images/icon-incorrect.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* --- Button and Error Styling --- */
+
+/* Style for the error message when no answer is selected */
+.no-choice-error {
+  color: #ee5454;
+  font-family: "rubik", sans-serif;
+  font-size: 18px;
+  text-align: center;
+  margin-top: 8px;
+}
+
+/* Hover state for the main buttons to make them feel interactive */
+#submit-answer-btn:hover,
+.play-again-btn:hover {
+  cursor: pointer;
+  background-color: #d394fa; /* A lighter purple for hover */
+}
+
+/* Style for the "Play Again" button in the results screen */
+.play-again-btn {
+  width: 100%; /* Make it full-width like the submit button */
+  padding: 16px;
+  height: 56px;
+  border-radius: 12px;
+  border: none;
+  background-color: #a729f5;
+  color: white;
+  font-family: "rubik", sans-serif;
+  font-size: 18px;
+  margin-top: 16px;
+}
+.results-container h2 { 
+  font-size: 40px;
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+.score-container p {
+  font-size: 18px;
+}
+
+#score-span {
+  font-weight: 600;
+}
+.score-container{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 32px;
+  background-color: white#3B4D66 ;
+  border-radius: 12px;
+  margin-top: 40px;
+}
+.score-container h2 {
+  font-size: 88px;
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        background-image: url(./assets/images/pattern-background-desktop-light.svg);
+    }
+    body.dark-mode {
+        background-image: url(./assets/images/pattern-background-desktop-dark.svg);
+    }
+    .subject-container ul {
+        gap: 24px;
+    }
+
+  }
