@@ -372,4 +372,38 @@ body.dark-mode .icon-moon {
     margin-left: 0;
     margin-right: 0;
   }
+
+  /* Bigger font sizes for desktop */
+  .title-container h1,
+  .title-container .questionBox,
+  .title-container #questionBox {
+    font-size: 2.4rem;
+    line-height: 1.2;
+  }
+  .option-text {
+    font-size: 1.5rem;
+  }
+  .option-letter {
+    font-size: 1.3rem;
+    width: 48px;
+    height: 48px;
+  }
+  .subject-item {
+    font-size: 1.25rem;
+    padding: 20px;
+  }
+  #submit-answer-btn,
+  .play-again-btn {
+    font-size: 1.25rem;
+    height: 64px;
+  }
+  .results-container h2 {
+    font-size: 56px;
+  }
+  .score-container h2 {
+    font-size: 120px;
+  }
+  .score-container p {
+    font-size: 1.25rem;
+  }
 }
